@@ -27,7 +27,7 @@ jobs:
     - name: Laravel Dusk Testing Run
       run: php artisan dusk --log-junit testing.log
     - name: Show Log File
-      uses: laiba-dev/laravel-autograding@master
+      uses: laiba-dev/laravel-autograding@v1.0
 #     - name: Create Database
 #       run: |
 #         mkdir -p database
