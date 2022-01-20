@@ -26,6 +26,14 @@ jobs:
       run: chmod -R 777 storage bootstrap/cache
     - name: Install chrome driver
       run: php artisan dusk:chrome-driver
+    - name: Start Chrome Driver
+      run: ./vendor/laravel/dusk/bin/chromedriver-linux &
+    - name: Run Laravel Server
+      run: php artisan serve &
+    - name: Run Dusk Tests
+      id: test
+      env:
+        APP_URL: "http://127.0.0.1:8000"
     - name: Laravel Dusk Testing Run
       run: php artisan dusk --log-junit testing.log
     - name: Show Log File
