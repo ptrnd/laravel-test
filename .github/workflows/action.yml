@@ -32,9 +32,9 @@ jobs:
     - name: Laravel Dusk Testing Run
       env:
         APP_URL: "http://127.0.0.1:8000"
-      run: php artisan dusk --log-junit testing.log
+      run: php artisan dusk --log-junit testing.log &
     - name: Show Log File
-      uses: laiba-dev/laravel-autograding@v1.0
+      uses: laiba-dev/laravel-autograding@v1.1
 #     - name: Create Database
 #       run: |
 #         mkdir -p database
