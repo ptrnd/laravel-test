@@ -33,14 +33,7 @@ jobs:
       env:
         APP_URL: "http://127.0.0.1:8000"
       run: php artisan dusk --log-junit testing.log &
-    - name: Show Log File
-      uses: laiba-dev/laravel-autograding@v1.4
-#     - name: Create Database
-#       run: |
-#         mkdir -p database
-#         touch database/database.sqlite
-#     - name: Execute tests (Unit and Feature tests) via PHPUnit
-#       env:
-#         DB_CONNECTION: sqlite
-#         DB_DATABASE: database/database.sqlite
-#       run: vendor/bin/phpunit
+    - name: Send to Server
+      run: curl -X POST https://api.laiba.dhanifudin.com/api/report -F username=mirfanrafif -F project_name=laiba-dev/laravel-test-mirfanrafif -F input_data=@testing.log -H 'Content-Type: multipart/form-data' -H 'Accept: application/json'
+#     - name: Show Log File
+#       uses: laiba-dev/laravel-autograding@v1.4
