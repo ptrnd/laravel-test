@@ -37,3 +37,8 @@ jobs:
       run: curl -X POST https://api.laiba.dhanifudin.com/api/report -F username=mirfanrafif -F project_name=laiba-dev/laravel-test-mirfanrafif -F input_data=@testing.log -H 'Content-Type:multipart/form-data' -H 'Accept:application/json'
 #     - name: Show Log File
 #       uses: laiba-dev/laravel-autograding@v1.4
+    - name: Upload Artifact
+      uses: actions/upload-artifact@v3
+      with:
+        name: testinglog
+        path: testing.log
