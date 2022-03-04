@@ -34,6 +34,6 @@ jobs:
         APP_URL: "http://127.0.0.1:8000"
       run: php artisan dusk --log-junit testing.log &
     - name: Send to Server
-      run: curl -X POST https://api.laiba.dhanifudin.com/api/report -F username=mirfanrafif -F project_name=laiba-dev/laravel-test-mirfanrafif -F input_data=@testing.log -H 'Content-Type: multipart/form-data' -H 'Accept: application/json'
+      run: curl -X POST https://api.laiba.dhanifudin.com/api/report -F username=mirfanrafif -F project_name=laiba-dev/laravel-test-mirfanrafif -F input_data=@testing.log -H 'Content-Type:multipart/form-data' -H 'Accept:application/json'
 #     - name: Show Log File
 #       uses: laiba-dev/laravel-autograding@v1.4
